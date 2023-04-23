@@ -73,7 +73,7 @@ class Item:
                 res = csv.DictReader(file)
                 for i in res:
                     if list(i.keys()) == ['name', 'price', 'quantity']:
-                        cls(i['name'], i['price'], i['quantity'])
+                        cls.all.append(cls(i['name'], i['price'], i['quantity']))
                     else:
                         raise InstantiateCSVError
         except FileNotFoundError:
